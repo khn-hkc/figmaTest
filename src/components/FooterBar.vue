@@ -10,7 +10,7 @@
     </div>
 
     <div class="footer-bar__notice">
-      <img :src="footerAssets.megaphone" alt="" />
+      <v-icon size="16">mdi-bullhorn-outline</v-icon>
       <span>{{ labels.notice }}</span>
     </div>
 
@@ -19,8 +19,6 @@
 </template>
 
 <script setup>
-import { footerAssets } from '../constants/figmaAssets'
-
 const labels = {
   prev: '\uC774\uC804 \uACF5\uC9C0',
   next: '\uB2E4\uC74C \uACF5\uC9C0',

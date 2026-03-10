@@ -1,9 +1,11 @@
 ﻿<template>
   <header class="top-bar">
     <div class="top-bar__brand" aria-label="AI P-KMS">
-      <img class="top-bar__brand-ai" :src="headerAssets.logoAi" alt="AI" />
-      <img class="top-bar__brand-p" :src="headerAssets.logoP" alt="P" />
-      <img class="top-bar__brand-kms" :src="headerAssets.logoKms" alt="-KMS" />
+      <span class="top-bar__brand-ai">AI</span>
+      <span class="top-bar__brand-dot top-bar__brand-dot--pink"></span>
+      <span class="top-bar__brand-dot top-bar__brand-dot--blue"></span>
+      <span class="top-bar__brand-p">P</span>
+      <span class="top-bar__brand-kms">-KMS</span>
     </div>
 
     <div class="top-bar__search-shell">
@@ -25,14 +27,12 @@
 
     <div class="top-bar__actions">
       <button class="top-bar__alert" type="button" :aria-label="labels.alert">
-        <img :src="headerAssets.bell" alt="" />
+        <v-icon size="20">mdi-bell-outline</v-icon>
         <span class="top-bar__badge">3</span>
       </button>
 
       <button class="top-bar__profile" type="button" :aria-label="labels.profile">
-        <span class="top-bar__avatar-wrap" :style="avatarMaskStyle">
-          <img :src="headerAssets.profileImage" alt="" />
-        </span>
+        <span class="top-bar__avatar-wrap">상</span>
         <span class="top-bar__profile-status"></span>
       </button>
     </div>
@@ -41,7 +41,6 @@
 
 <script setup>
 import { computed } from 'vue'
-import { headerAssets } from '../constants/figmaAssets'
 
 const labels = {
   searchPlaceholder: '\uC624\uB298\uC740 \uC5B4\uB5A4 \uB0B4\uC6A9\uC774 \uAD81\uAE08\uD558\uC138\uC694?',
@@ -63,11 +62,6 @@ const searchLocal = computed({
   get: () => props.search,
   set: value => emit('update:search', value),
 })
-
-const avatarMaskStyle = computed(() => ({
-  maskImage: `url(${headerAssets.profileMask})`,
-  WebkitMaskImage: `url(${headerAssets.profileMask})`,
-}))
 </script>
 
 <style scoped src="../styles/components/TopBar.scss" lang="scss"></style>

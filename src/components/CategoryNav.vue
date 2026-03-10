@@ -3,7 +3,9 @@
     <div class="category-panel__header">
       <div class="category-panel__title-row">
         <h2 v-if="!collapsed">{{ labels.title }}</h2>
-        <div v-else class="category-panel__mini-title">{{ labels.shortTitle }}</div>
+        <div v-else class="category-panel__mini-title">
+          <v-icon size="18">mdi-view-sidebar-outline</v-icon>
+        </div>
 
         <v-tooltip location="left" content-class="panel-tooltip">
           <template #activator="{ props: tooltipProps }">
@@ -14,7 +16,7 @@
               :aria-label="collapsed ? labels.expandPanel : labels.collapsePanel"
               @click="emit('toggle-panel')"
             >
-              <img :src="headerAssets.panel" alt="" />
+              <v-icon size="18">{{ collapsed ? 'mdi-view-sidebar-outline' : 'mdi-dock-right' }}</v-icon>
             </button>
           </template>
           <span>{{ collapsed ? labels.expandPanel : labels.collapsePanel }}</span>
@@ -61,11 +63,9 @@
 <script setup>
 import { computed, reactive } from 'vue'
 import CategoryTree from './CategoryTree.vue'
-import { headerAssets } from '../constants/figmaAssets'
 
 const labels = {
   title: '\uCEE8\uD150\uCE20 \uC870\uD68C',
-  shortTitle: 'K',
   collapsePanel: '\uD328\uB110 \uC811\uAE30',
   expandPanel: '\uD328\uB110 \uD3BC\uCE58\uAE30',
   searchPlaceholder: '\uAC80\uC0C9\uC5B4 \uC785\uB825',

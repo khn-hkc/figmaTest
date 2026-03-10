@@ -31,18 +31,19 @@
     border: 0;
     border-radius: 8px;
     background: transparent;
+    color: rgba(255, 255, 255, 0.62);
     cursor: pointer;
-    transition: background-color $transition-fast;
-
-    img {
-      width: 28px;
-      height: 28px;
-    }
+    transition: background-color $transition-fast, color $transition-fast;
 
     &:hover,
     &.is-active {
       background: rgba(255, 255, 255, 0.08);
+      color: $color-surface;
     }
+  }
+
+  &__button--menu {
+    color: $color-surface;
   }
 }
 

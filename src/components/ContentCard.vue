@@ -13,15 +13,15 @@
 
     <div class="content-card__stats">
       <div class="content-card__stat">
-        <img :src="contentAssets.heart" alt="" />
+        <v-icon size="16">mdi-heart-outline</v-icon>
         <span>{{ item.stats.likes }}</span>
       </div>
       <div class="content-card__stat">
-        <img :src="contentAssets.favorite" alt="" />
+        <v-icon size="16">mdi-star-outline</v-icon>
         <span>{{ item.stats.bookmarks }}</span>
       </div>
       <div class="content-card__stat">
-        <img :src="contentAssets.eye" alt="" />
+        <v-icon size="16">mdi-eye-outline</v-icon>
         <span>{{ item.stats.views }}</span>
       </div>
     </div>
@@ -29,8 +29,6 @@
 </template>
 
 <script setup>
-import { contentAssets } from '../constants/figmaAssets'
-
 defineProps({
   item: {
     type: Object,

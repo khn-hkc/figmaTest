@@ -2,7 +2,7 @@
   <section class="content-section-block">
     <header class="content-section-block__header">
       <div v-if="icon === 'ai'" class="content-section-block__icon-wrap">
-        <img :src="contentAssets.ai" alt="" />
+        <v-icon size="18">mdi-auto-fix</v-icon>
       </div>
       <h3>{{ title }}</h3>
     </header>
@@ -15,7 +15,6 @@
 
 <script setup>
 import ContentCard from './ContentCard.vue'
-import { contentAssets } from '../constants/figmaAssets'
 
 defineProps({
   title: {

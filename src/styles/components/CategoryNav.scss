@@ -32,8 +32,9 @@
   }
 
   &__mini-title {
+    display: inline-flex;
     width: 100%;
-    text-align: center;
+    justify-content: center;
   }
 
   &__toggle {
@@ -45,11 +46,7 @@
     border: 0;
     border-radius: 8px;
     background: rgba(34, 34, 34, 0.08);
-
-    img {
-      width: 20px;
-      height: 20px;
-    }
+    color: $color-text-subtle;
   }
 
   &__actions {

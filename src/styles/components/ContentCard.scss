@@ -1,0 +1,64 @@
+﻿@use '../tokens' as *;
+
+.content-card {
+  width: 100%;
+  max-width: 723px;
+  padding: 4px 4px 24px;
+
+  &__breadcrumbs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2px;
+    color: $color-text-muted;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -0.5px;
+  }
+
+  h4 {
+    margin: 2px 0 0;
+    color: $color-brand;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+  }
+
+  &__summary,
+  &__description {
+    margin: 0;
+    color: $color-text;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+  }
+
+  &__description {
+    max-height: 40px;
+    overflow: hidden;
+  }
+
+  &__stats {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  &__stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 6px;
+    color: $color-text;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -0.5px;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

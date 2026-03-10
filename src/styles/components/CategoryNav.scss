@@ -1,0 +1,115 @@
+﻿@use '../tokens' as *;
+
+.category-panel {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  border-right: 1px solid $color-border;
+  background: $color-surface;
+  transition: width $transition-fast;
+
+  &__header {
+    padding: 16px 20px;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  h2,
+  &__mini-title {
+    margin: 0;
+    padding: 6px 4px;
+    color: $color-text;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+  }
+
+  &__mini-title {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__toggle {
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 8px;
+    background: rgba(34, 34, 34, 0.08);
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  &__actions-left {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__tree {
+    overflow: auto;
+    padding: 16px 20px;
+  }
+
+  &.is-collapsed {
+    .category-panel__header {
+      display: flex;
+      height: 100%;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 16px 12px;
+    }
+  }
+}
+
+:deep(.category-panel__search .v-field) {
+  margin-top: 16px;
+  border-color: $color-border;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+:deep(.category-panel__search .v-field__input) {
+  min-height: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: $color-text;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.5px;
+}
+
+:deep(.category-panel__actions .v-btn) {
+  border-color: $color-border;
+  color: $color-text-subtle;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  text-transform: none;
+}
+
+:global(.panel-tooltip) {
+  background: $color-tooltip;
+  color: $color-surface;
+  border-radius: 4px;
+  box-shadow: $shadow-tooltip;
+}

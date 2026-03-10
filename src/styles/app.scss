@@ -1,0 +1,43 @@
+﻿@use './tokens' as *;
+
+.app-frame {
+  display: flex;
+  min-height: 100vh;
+  background: $color-surface;
+}
+
+.app-shell {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.page-body {
+  display: grid;
+  flex: 1;
+  min-height: 0;
+  grid-template-columns: var(--sidebar-width, 400px) minmax(0, 1fr);
+  transition: grid-template-columns $transition-fast;
+}
+
+.page-sidebar,
+.page-content {
+  min-width: 0;
+}
+
+@media (max-width: $breakpoint-desktop) {
+  .page-body {
+    grid-template-columns: var(--sidebar-width, 360px) minmax(0, 1fr);
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .app-frame {
+    flex-direction: column;
+  }
+
+  .page-body {
+    grid-template-columns: 1fr;
+  }
+}

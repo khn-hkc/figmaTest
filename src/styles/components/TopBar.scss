@@ -1,0 +1,153 @@
+﻿@use '../tokens' as *;
+
+.top-bar {
+  display: grid;
+  grid-template-columns: 180px minmax(280px, 560px) 96px;
+  align-items: center;
+  gap: 24px;
+  min-height: 80px;
+  padding: 0 20px 0 24px;
+  border-bottom: 1px solid $color-border;
+  background: $color-surface;
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: 24px;
+  }
+
+  &__brand-ai {
+    width: 19px;
+    height: 22px;
+  }
+
+  &__brand-p {
+    width: 20px;
+    height: 24px;
+  }
+
+  &__brand-kms {
+    width: 69px;
+    height: 22px;
+  }
+
+  &__search-shell {
+    width: 100%;
+    justify-self: center;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  &__alert,
+  &__profile {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &__alert {
+    width: 40px;
+    height: 40px;
+
+    img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 5px;
+    right: 4px;
+    display: inline-flex;
+    min-width: 14px;
+    height: 14px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3px;
+    border: 1px solid $color-surface;
+    border-radius: 999px;
+    background: $color-notice;
+    color: $color-surface;
+    font-size: 9px;
+    line-height: 1;
+  }
+
+  &__profile {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+  }
+
+  &__avatar-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    overflow: hidden;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__profile-status {
+    position: absolute;
+    right: 2px;
+    bottom: 3px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid $color-surface;
+    border-radius: 999px;
+    background: $color-brand;
+  }
+}
+
+:deep(.top-bar__search .v-field) {
+  min-height: 44px;
+  border: 1px solid $color-border;
+  border-radius: 24px;
+  background: $color-surface;
+  box-shadow: none;
+}
+
+:deep(.top-bar__search .v-field__input) {
+  min-height: 44px;
+  padding: 0 0 0 4px;
+  color: $color-text-muted;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+}
+
+:deep(.top-bar__search .v-field__append-inner) {
+  align-items: center;
+  padding-top: 0;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .top-bar {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px;
+
+    &__actions {
+      justify-content: flex-start;
+    }
+  }
+}

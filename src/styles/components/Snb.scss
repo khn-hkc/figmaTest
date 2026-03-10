@@ -1,0 +1,76 @@
+﻿@use '../tokens' as *;
+
+.snb {
+  display: flex;
+  width: 64px;
+  min-width: 64px;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 12px;
+  background: $color-nav;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__button {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+    transition: background-color $transition-fast;
+
+    img {
+      width: 28px;
+      height: 28px;
+    }
+
+    &:hover,
+    &.is-active {
+      background: rgba(255, 255, 255, 0.08);
+    }
+  }
+}
+
+:global(.snb-tooltip) {
+  background: $color-tooltip;
+  color: $color-surface;
+  border-radius: 4px;
+  box-shadow: $shadow-tooltip;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .snb {
+    width: 100%;
+    min-width: 0;
+    min-height: auto;
+    flex-direction: row;
+    align-items: center;
+
+    &__top {
+      flex: 1;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &__list {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}

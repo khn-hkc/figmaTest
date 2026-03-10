@@ -1,0 +1,14 @@
+﻿@use '../tokens' as *;
+
+.content-area {
+  height: 100%;
+  overflow: auto;
+  padding: 18px 40px;
+  background: $color-surface;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .content-area {
+    padding: 24px 16px;
+  }
+}
